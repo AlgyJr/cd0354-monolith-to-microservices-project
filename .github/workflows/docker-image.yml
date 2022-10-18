@@ -30,10 +30,10 @@ jobs:
       run: docker build ./udagram-frontend --file ./udagram-frontend/Dockerfile --tag algyjr/udagram-frontend:v1
     
     - name: Docker Push udagram-api-user
-      run: docker push $DOCKER_USERNAME/udagram-api-user:v1
+      run: docker push ${{secrets.DOCKER_USERNAME}}/udagram-api-user:v1
     - name: Docker Push udagram-api-feed
-      run: docker push $DOCKER_USERNAME/udagram-api-feed:v1
+      run: docker push ${{secrets.DOCKER_USERNAME}}/udagram-api-feed:v1
     - name: Docker Push reverseproxy
-      run: docker push $DOCKER_USERNAME/reverseproxy:v1
+      run: docker push ${{secrets.DOCKER_USERNAME}}/reverseproxy:v1
     - name: Docker Push udagram-frontend
-      run: docker push $DOCKER_USERNAME/udagram-frontend:v1
+      run: docker push ${{secrets.DOCKER_USERNAME}}/udagram-frontend:v1
