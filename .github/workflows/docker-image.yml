@@ -21,13 +21,13 @@ jobs:
       run: |
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - name: Build the udagram-api-user Docker image
-      run: docker build . --file ./udagram-api-user/Dockerfile --tag algyjr/udagram-api-user:v1
+      run: docker build ./udagram-api-user --file ./udagram-api-user/Dockerfile --tag algyjr/udagram-api-user:v1
     - name: Build the udagram-api-feed Docker image
-      run: docker build . --file ./udagram-api-feed/Dockerfile --tag algyjr/udagram-api-feed:v1
+      run: docker build ./udagram-api-feed --file ./udagram-api-feed/Dockerfile --tag algyjr/udagram-api-feed:v1
     - name: Build the reverseproxy Docker image
-      run: docker build . --file ./udagram-reverseproxy/Dockerfile --tag algyjr/reverseproxy:v1
+      run: docker build ./udagram-reverseproxy --file ./udagram-reverseproxy/Dockerfile --tag algyjr/reverseproxy:v1
     - name: Build the udagram-frontend Docker image
-      run: docker build . --file ./udagram-frontend/Dockerfile --tag algyjr/udagram-frontend:v1
+      run: docker build ./udagram-frontend --file ./udagram-frontend/Dockerfile --tag algyjr/udagram-frontend:v1
     
     - name: Docker Push udagram-api-user
       run: docker push $DOCKER_USERNAME/udagram-api-user:v1
