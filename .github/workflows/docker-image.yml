@@ -36,4 +36,4 @@ jobs:
     - name: Docker Push reverseproxy
       run: docker push ${{secrets.DOCKER_USERNAME}}/reverseproxy:v1
     - name: Docker Push udagram-frontend
-      run: docker push ${{secrets.DOCKER_USERNAME}}/udagram-frontend:v1
+      run: docker push ${{secrets.DOCKER_USERNAME}}/udagram-frontend:v2
