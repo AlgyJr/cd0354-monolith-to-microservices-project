@@ -25,15 +25,15 @@ jobs:
     - name: Build the udagram-api-feed Docker image
       run: docker build ./udagram-api-feed --file ./udagram-api-feed/Dockerfile --tag algyjr/udagram-api-feed:v1
     - name: Build the reverseproxy Docker image
-      run: docker build ./udagram-reverseproxy --file ./udagram-reverseproxy/Dockerfile --tag algyjr/reverseproxy:v1
+      run: docker build ./udagram-reverseproxy --file ./udagram-reverseproxy/Dockerfile --tag algyjr/reverseproxy:v2
     - name: Build the udagram-frontend Docker image
-      run: docker build ./udagram-frontend --file ./udagram-frontend/Dockerfile --tag algyjr/udagram-frontend:v2
+      run: docker build ./udagram-frontend --file ./udagram-frontend/Dockerfile --tag algyjr/udagram-frontend:v4
     
     - name: Docker Push udagram-api-user
       run: docker push ${{secrets.DOCKER_USERNAME}}/udagram-api-user:v1
     - name: Docker Push udagram-api-feed
       run: docker push ${{secrets.DOCKER_USERNAME}}/udagram-api-feed:v1
     - name: Docker Push reverseproxy
-      run: docker push ${{secrets.DOCKER_USERNAME}}/reverseproxy:v1
+      run: docker push ${{secrets.DOCKER_USERNAME}}/reverseproxy:v2
     - name: Docker Push udagram-frontend
-      run: docker push ${{secrets.DOCKER_USERNAME}}/udagram-frontend:v2
+      run: docker push ${{secrets.DOCKER_USERNAME}}/udagram-frontend:v4
